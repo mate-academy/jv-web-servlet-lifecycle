@@ -16,8 +16,8 @@ public class WriteController extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        myResource = MyCoolResource.openResource();
         super.init();
+        myResource = MyCoolResource.openResource();
     }
 
     @Override
