@@ -17,11 +17,11 @@ public class IndexController extends HttpServlet {
         myResource = MyCoolResource.openResource();
     }
 
+    @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         LocalDateTime localDate = LocalDateTime.now();
         myResource.write(localDate.toString());
-        System.out.println(localDate);
         req.getRequestDispatcher("/WEB-INF/views/information.jsp").forward(req, resp);
     }
 
