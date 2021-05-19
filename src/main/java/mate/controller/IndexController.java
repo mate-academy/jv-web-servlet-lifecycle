@@ -12,7 +12,6 @@ import mate.dao.MyCoolResource;
 @WebServlet(urlPatterns = "/page")
 public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
-    //TODO: implement
 
     @Override
     public void init() throws ServletException {
@@ -23,10 +22,9 @@ public class IndexController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String s = LocalDateTime.now().toString();
-        myResource.write(s);
-        req.setAttribute("localDateTime", s);
-        getServletContext().getRequestDispatcher("/webinfo/views/page.jsp").forward(req, resp);
+        myResource.write(LocalDateTime.now().toString());
+        req.setAttribute("localDateTime", LocalDateTime.now().toString());
+        getServletContext().getRequestDispatcher("/WEB-INF/views/page.jsp").forward(req, resp);
     }
 
     @Override
