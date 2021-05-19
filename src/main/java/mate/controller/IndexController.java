@@ -30,7 +30,7 @@ public class IndexController extends HttpServlet {
 
     @Override
     public void destroy() {
-        super.destroy();
         myResource.close();
+        super.destroy();
     }
 }
