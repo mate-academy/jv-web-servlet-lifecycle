@@ -4,6 +4,6 @@
     <title>Index page</title>
 </head>
 <body>
-    <p1>Information written to our resource</p1>
+    <h1>Information written to our resource.  Date and time: ${dateTime}</h1>
 </body>
 </html>
