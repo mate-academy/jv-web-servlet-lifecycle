@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.dao.MyCoolResource;
 
 @WebServlet(urlPatterns = "/info")
-public class IndexController extends HttpServlet {
+public class InfoController extends HttpServlet {
     private MyCoolResource myResource;
     //TODO: implement
     
@@ -24,7 +24,6 @@ public class IndexController extends HttpServlet {
     @Override
     public void init() throws ServletException {
         System.out.println("MyResource was initiated");
-        super.init();
         myResource = MyCoolResource.openResource();
     }
     
