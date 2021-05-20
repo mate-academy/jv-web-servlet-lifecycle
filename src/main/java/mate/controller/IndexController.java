@@ -13,14 +13,15 @@ public class IndexController extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        super.init();
         myResource = MyCoolResource.openResource();
     }
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        myResource.write(LocalDateTime.now().toString());
+        String currentDateTime = LocalDateTime.now().toString();
+        myResource.write(currentDateTime);
+        req.setAttribute("result", currentDateTime);
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 
