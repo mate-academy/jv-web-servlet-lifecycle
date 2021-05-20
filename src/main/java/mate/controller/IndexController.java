@@ -25,7 +25,7 @@ public class IndexController extends HttpServlet {
         String s = LocalDateTime.now().toString();
         myResource.write(s);
         req.setAttribute("localDateTime", s);
-        getServletContext().getRequestDispatcher("/WEB-INF/views/page.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 
     @Override
