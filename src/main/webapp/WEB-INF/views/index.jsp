@@ -4,6 +4,9 @@
     <title>Index page</title>
 </head>
 <body>
-Today's date: <%= (new java.util.Date())%>
+<h1>
+    Information written to our resource
+</h1>
+<p>Today's date: <%= (new java.util.Date())%></p>
 </body>
 </html>
