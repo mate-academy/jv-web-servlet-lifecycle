@@ -15,7 +15,6 @@ public class IndexController extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        super.init();
         myResource = MyCoolResource.openResource();
     }
 
@@ -23,6 +22,7 @@ public class IndexController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String date = LocalDateTime.now().toString();
+        req.setAttribute("date", date);
         myResource.write(date);
         req.getRequestDispatcher("WEB-INF/views/index.jsp").forward(req, resp);
     }
@@ -30,6 +30,5 @@ public class IndexController extends HttpServlet {
     @Override
     public void destroy() {
         myResource.close();
-        super.destroy();
     }
 }
