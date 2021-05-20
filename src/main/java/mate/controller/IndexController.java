@@ -1,6 +1,7 @@
 package mate.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.servlet.ServletException;
@@ -23,8 +24,13 @@ public class IndexController extends HttpServlet {
             throws ServletException, IOException {
         LocalDateTime dateTime = LocalDateTime.now();
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        myResource.write(dateTime.format(dateTimeFormatter));
-        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
+        String dateTimeMessage = dateTime.format(dateTimeFormatter);
+        myResource.write(dateTimeMessage);
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
+        req.getRequestDispatcher("/WEB-INF/views/index.jsp").include(req, resp);
+        out.println(dateTimeMessage);
+        out.close();
     }
     
     @Override
