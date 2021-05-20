@@ -11,10 +11,6 @@ public class MyCoolResource implements Closeable {
         this.stringList = stringList;
     }
 
-    public List<String> getStringList() {
-        return stringList;
-    }
-
     public static MyCoolResource openResource() {
         return new MyCoolResource(new ArrayList<>());
     }
