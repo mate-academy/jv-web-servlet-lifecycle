@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.dao.MyCoolResource;
 
-@WebServlet(urlPatterns = "/page")
+@WebServlet(urlPatterns = "/index")
 public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
 
@@ -22,8 +22,9 @@ public class IndexController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        myResource.write(LocalDateTime.now().toString());
-        req.setAttribute("localDateTime", LocalDateTime.now().toString());
+        String s = LocalDateTime.now().toString();
+        myResource.write(s);
+        req.setAttribute("localDateTime", s);
         getServletContext().getRequestDispatcher("/WEB-INF/views/page.jsp").forward(req, resp);
     }
 
