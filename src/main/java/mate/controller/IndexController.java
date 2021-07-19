@@ -19,8 +19,7 @@ public class IndexController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        LocalDateTime currentDateTime = LocalDateTime.now();
-        myResource.write(currentDateTime.toString());
+        myResource.write(LocalDateTime.now().toString());
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 
