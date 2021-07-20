@@ -14,12 +14,13 @@ import mate.dao.MyCoolResource;
 @WebServlet(urlPatterns = "/index")
 public class IndexController extends HttpServlet {
     private static final String PATH_TO_THE_PAGE = "/WEB-INF/views/index.jsp";
+    private static final String TIME_FORMATTER = "HH:mm:ss";
     private MyCoolResource myResource;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        myResource.write(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+        myResource.write(LocalTime.now().format(DateTimeFormatter.ofPattern(TIME_FORMATTER)));
         req.getRequestDispatcher(PATH_TO_THE_PAGE).forward(req, resp);
     }
 
