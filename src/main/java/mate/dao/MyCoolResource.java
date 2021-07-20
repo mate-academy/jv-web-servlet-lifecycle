@@ -3,7 +3,6 @@ package mate.dao;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MyCoolResource implements Closeable {
     private List<String> stringList;
@@ -24,9 +23,5 @@ public class MyCoolResource implements Closeable {
     public void close() {
         stringList.forEach(System.out::println);
         stringList = null;
-    }
-
-    public String getStringList() {
-        return String.join("\n", stringList);
     }
 }
