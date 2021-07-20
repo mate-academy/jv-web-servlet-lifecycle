@@ -14,21 +14,21 @@ public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
 
     @Override
+    public void init() {
+        myResource = MyCoolResource.openResource();
+    }
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String currentDateTime = LocalDateTime.now().toString();
         myResource.write(currentDateTime);
-        req.setAttribute("Date Time Now", currentDateTime);
+        req.setAttribute("dateTimeNow", currentDateTime);
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 
     @Override
     public void destroy() {
         myResource.close();
-    }
-
-    @Override
-    public void init() throws ServletException {
-        myResource = MyCoolResource.openResource();
     }
 }

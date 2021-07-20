@@ -7,6 +7,6 @@
     <title>my index page</title>
 </head>
 <body>
-<h1>Hello world!</h1>
+<h1>Now is ${dateTimeNow}</h1>
 </body>
 </html>
