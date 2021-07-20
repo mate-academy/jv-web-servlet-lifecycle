@@ -14,7 +14,6 @@ public class IndexController extends HttpServlet {
     @Override
     public void init() throws ServletException {
         myResource = MyCoolResource.openResource();
-        super.init();
     }
 
     @Override
@@ -28,6 +27,5 @@ public class IndexController extends HttpServlet {
     @Override
     public void destroy() {
         myResource.close();
-        super.destroy();
     }
 }
