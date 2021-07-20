@@ -9,16 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.dao.MyCoolResource;
 
-@WebServlet(urlPatterns = {
-        "/index","/"
-})
+@WebServlet(urlPatterns = {"/index","/"})
 public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
-
-    @Override
-    public void destroy() {
-        myResource.close();
-    }
 
     @Override
     public void init() {
@@ -30,5 +23,10 @@ public class IndexController extends HttpServlet {
             throws ServletException, IOException {
         myResource.write(LocalDateTime.now().toString());
         req.getRequestDispatcher("/WEB-INF/views/siteTemplate.jsp").forward(req,resp);
+    }
+
+    @Override
+    public void destroy() {
+        myResource.close();
     }
 }
