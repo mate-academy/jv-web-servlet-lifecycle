@@ -1,13 +1,13 @@
 package mate.controller;
 
-import java.time.LocalDateTime;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import mate.dao.MyCoolResource;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import mate.dao.MyCoolResource;
 
 @WebServlet(urlPatterns = "/index")
 public class IndexController extends HttpServlet {
