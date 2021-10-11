@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.dao.MyCoolResource;
 
 public class IndexController extends HttpServlet {
-    private static MyCoolResource myResource;
+    private MyCoolResource myResource;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
