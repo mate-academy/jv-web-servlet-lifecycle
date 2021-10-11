@@ -12,6 +12,11 @@ public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
 
     @Override
+    public void init() throws ServletException {
+        myResource = MyCoolResource.openResource();
+    }
+
+    @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         myResource.write(LocalDate.now().toString());
@@ -19,14 +24,7 @@ public class IndexController extends HttpServlet {
     }
 
     @Override
-    public void init() throws ServletException {
-        super.init();
-        myResource = MyCoolResource.openResource();
-    }
-
-    @Override
     public void destroy() {
-        super.destroy();
         myResource.close();
     }
 }
