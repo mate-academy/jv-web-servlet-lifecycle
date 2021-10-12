@@ -13,8 +13,6 @@ public class IndexController extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        System.out.println("Init MyCoolResource in Servlet "
-                + getServletConfig().getServletName());
         myResource = MyCoolResource.openResource();
     }
 
@@ -22,14 +20,11 @@ public class IndexController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         myResource.write(LocalDateTime.now().toString());
-        System.out.println("Information written to our resource");
         req.getRequestDispatcher("\\WEB-INF\\views\\index.jsp").forward(req,resp);
     }
 
     @Override
     public void destroy() {
-        System.out.println("Close MyCoolResource in Servlet "
-                + getServletConfig().getServletName());
         myResource.close();
     }
 }
