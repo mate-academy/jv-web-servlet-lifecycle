@@ -19,14 +19,14 @@ public class IndexController extends HttpServlet {
     }
 
     @Override
-    public void destroy() {
-        myResource.close();
-    }
-
-    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("WEB-INF/views/index.jsp").forward(req, resp);
         myResource.write(LocalDateTime.now().toString());
+    }
+
+    @Override
+    public void destroy() {
+        myResource.close();
     }
 }
