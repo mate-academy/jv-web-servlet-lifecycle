@@ -18,6 +18,7 @@ public class IndexController extends HttpServlet {
         myResource = MyCoolResource.openResource();
     }
 
+
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
