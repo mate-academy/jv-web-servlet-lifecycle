@@ -1,13 +1,12 @@
 package mate.controller;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import mate.dao.MyCoolResource;
-
-import java.io.IOException;
-import java.time.LocalDateTime;
 
 public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
