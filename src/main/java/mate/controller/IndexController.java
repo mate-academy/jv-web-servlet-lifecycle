@@ -13,21 +13,18 @@ public class IndexController extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        System.out.println("initialization");
         myResource = MyCoolResource.openResource();
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        System.out.println("doGet method");
         myResource.write(LocalDateTime.now().toString());
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req,resp);
     }
 
     @Override
     public void destroy() {
-        System.out.println("destroy process");
         myResource.close();
     }
 }
