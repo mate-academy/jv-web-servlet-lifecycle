@@ -2,6 +2,7 @@ package mate.controller;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,5 +32,6 @@ public class IndexController extends HttpServlet {
     @Override
     public void destroy() {
         myResource.close();
+        super.destroy();
     }
 }
