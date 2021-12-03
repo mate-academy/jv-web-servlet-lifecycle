@@ -1,7 +1,5 @@
 package mate.controller;
 
-import static mate.dao.MyCoolResource.openResource;
-
 import java.io.IOException;
 import java.time.LocalDateTime;
 import javax.servlet.ServletException;
@@ -16,15 +14,15 @@ public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
 
     @Override
+    public void init() throws ServletException {
+        myResource = MyCoolResource.openResource();
+    }
+
+    @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         myResource.write(LocalDateTime.now().toString());
         req.getRequestDispatcher("WEB-INF/views/index.jsp").forward(req,resp);
-    }
-
-    @Override
-    public void init() throws ServletException {
-        myResource = openResource();
     }
 
     @Override
