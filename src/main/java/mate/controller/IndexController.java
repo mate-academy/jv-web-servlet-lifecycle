@@ -12,21 +12,19 @@ public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        myResource.write("Request date and time: " + LocalDateTime.now());
-        req.getRequestDispatcher("WEB-INFO/views/index.jsp").forward(req, resp);
+    public void init() throws ServletException {
+        myResource = MyCoolResource.openResource();
     }
 
     @Override
-    public void init() throws ServletException {
-        super.init();
-        myResource = MyCoolResource.openResource();
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        myResource.write("Request date and time: " + LocalDateTime.now());
+        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 
     @Override
     public void destroy() {
         super.destroy();
-        myResource.close();
     }
 }
