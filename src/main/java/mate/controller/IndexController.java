@@ -12,7 +12,7 @@ public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
 
     @Override
-    public void init(){
+    public void init() {
         myResource = MyCoolResource.openResource();
     }
 
