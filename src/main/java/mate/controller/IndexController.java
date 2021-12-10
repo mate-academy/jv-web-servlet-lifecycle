@@ -17,12 +17,12 @@ public class IndexController extends HttpServlet {
     }
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         myResource = MyCoolResource.openResource();
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         myResource.write(LocalDateTime.now().toString());
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
