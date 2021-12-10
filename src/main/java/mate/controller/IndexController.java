@@ -22,7 +22,7 @@ public class IndexController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         myResource.write(LocalDateTime.now().toString());
-        req.getRequestDispatcher("WEB-INF/views/index.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 
     @Override
