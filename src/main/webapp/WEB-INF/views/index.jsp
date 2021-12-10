@@ -4,6 +4,6 @@
     <title>Index page</title>
 </head>
 <body>
-<h1>Information was written to our resource</h1>
+    <h1>Information was written to our resource</h1>
 </body>
 </html>
