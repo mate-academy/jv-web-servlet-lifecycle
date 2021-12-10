@@ -1,6 +1,7 @@
 package mate.controller;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +19,7 @@ public class IndexController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        myResource.write(req.getQueryString());
+        myResource.write(LocalDateTime.now().toString());
         req.getRequestDispatcher("/WEB_INF/views/index.jsp").forward(req, resp);
     }
 
