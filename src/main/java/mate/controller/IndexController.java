@@ -16,22 +16,18 @@ public class IndexController extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        System.out.println("init was called");
-        super.init(config);
         myResource = MyCoolResource.openResource();
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        System.out.println("doGet was called");
         myResource.write(String.valueOf(new Date()));
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 
     @Override
     public void destroy() {
-        System.out.println("destroy was called");
-        super.destroy();
+        myResource.close();
     }
 }
