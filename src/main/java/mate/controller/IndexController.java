@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.dao.MyCoolResource;
 
-@WebServlet("/index")
+@WebServlet(urlPatterns = "/index")
 public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
 
