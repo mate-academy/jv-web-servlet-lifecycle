@@ -27,5 +27,8 @@ public class IndexController extends HttpServlet {
         req.getRequestDispatcher(RESOURCE_WRITTEN).forward(req, resp);
     }
 
-
+    @Override
+    public void destroy() {
+        myResource.close();
+    }
 }
