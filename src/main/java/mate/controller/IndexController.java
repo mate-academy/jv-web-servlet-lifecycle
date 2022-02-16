@@ -22,9 +22,10 @@ public class IndexController extends HttpServlet {
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
         myResource.write(LocalDateTime.now().toString());
     }
-        @Override
-        public void destroy() {
-            myResource.close();
-        }
+
+    @Override
+    public void destroy() {
+        myResource.close();
     }
+}
 
