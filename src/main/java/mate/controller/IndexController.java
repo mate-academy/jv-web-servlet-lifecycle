@@ -3,7 +3,6 @@ package mate.controller;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Locale;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -31,7 +30,7 @@ public class IndexController extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
         System.out.println("Method init was called. Here we can initialize field myResource");
         super.init(config);
-        myResource = new MyCoolResource(new ArrayList<>());
+        myResource = MyCoolResource.openResource();
     }
 
     @Override
