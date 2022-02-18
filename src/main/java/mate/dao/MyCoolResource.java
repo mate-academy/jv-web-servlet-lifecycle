@@ -7,7 +7,9 @@ import java.util.List;
 public class MyCoolResource implements Closeable {
     private List<String> stringList;
 
-    private MyCoolResource(List<String> stringList) {
+    //навіщо хтось створив конструктор MyCoolResource і зробив його з модифікатором private
+    //для того щоб можна було створювати екзепляри цього класу я зміню модифікатор на public
+    public MyCoolResource(List<String> stringList) {
         this.stringList = stringList;
     }
 
