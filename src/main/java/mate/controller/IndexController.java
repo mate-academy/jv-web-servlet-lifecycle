@@ -1,6 +1,7 @@
 package mate.controller;
 
 import java.io.IOException;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +12,7 @@ public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
 
     @Override
-    public void init() {
+    public void init(ServletConfig servletConfig) {
         myResource = MyCoolResource.openResource();
     }
 
@@ -20,7 +21,7 @@ public class IndexController extends HttpServlet {
             throws ServletException, IOException {
         String timeString = String.valueOf(System.currentTimeMillis());
         myResource.write(timeString);
-        req.getRequestDispatcher("/view/info.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/view/info.jsp").forward(req, resp);
     }
 
     @Override
