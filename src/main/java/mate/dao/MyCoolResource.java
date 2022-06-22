@@ -12,15 +12,18 @@ public class MyCoolResource implements Closeable {
     }
 
     public static MyCoolResource openResource() {
+        System.out.println("Open resource");
         return new MyCoolResource(new ArrayList<>());
     }
 
     public void write(String string) {
+        System.out.println("Write to resource");
         stringList.add(string);
     }
 
     @Override
     public void close() {
+        System.out.println("Close resource");
         stringList.forEach(System.out::println);
         stringList = null;
     }
