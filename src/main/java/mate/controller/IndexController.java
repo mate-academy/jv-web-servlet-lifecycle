@@ -2,8 +2,6 @@ package mate.controller;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,8 +20,7 @@ public class IndexController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        myResource.write(LocalDateTime.now().format(DateTimeFormatter
-                .ofPattern("dd MMMM yyyy HH:mm", Locale.ENGLISH)));
+        myResource.write(String.valueOf(LocalDateTime.now()));
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req,resp);
     }
 
