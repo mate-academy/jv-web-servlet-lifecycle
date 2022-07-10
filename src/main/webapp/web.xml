@@ -4,15 +4,26 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>index</servlet-name>
+        <servlet-name>indexController</servlet-name>
         <servlet-class>mate.controller.IndexController</servlet-class>
+<!--        <load-on-startup>1</load-on-startup>-->
     </servlet>
     <servlet-mapping>
-        <servlet-name>index</servlet-name>
+        <servlet-name>indexController</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>IndexController</servlet-name>-->
+<!--        <url-pattern>/</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+    <servlet>
+        <servlet-name>itemsController</servlet-name>
+        <servlet-class>mate.controller.ItemsController</servlet-class>
+<!--        <load-on-startup>1</load-on-startup>-->
+    </servlet>
     <servlet-mapping>
-        <servlet-name>index</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>itemsController</servlet-name>
+        <url-pattern>/items</url-pattern>
     </servlet-mapping>
 </web-app>
