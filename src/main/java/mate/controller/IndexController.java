@@ -5,12 +5,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import mate.dao.MyCoolResource;
 
 public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
-    //TODO: implement
 
     @Override
     public void init() {
