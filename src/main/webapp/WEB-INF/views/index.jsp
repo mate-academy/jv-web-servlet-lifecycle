@@ -4,6 +4,6 @@
     <title>Information</title>
 </head>
 <body>
-<h1>Information written to our resource</h1>
+<h1>Information written to our resource: ${date}</h1>
 </body>
 </html>

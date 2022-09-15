@@ -25,8 +25,9 @@ public class IndexController extends HttpServlet {
         Date date = new Date();
         SimpleDateFormat simpleDateFormat =
                 new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        req.setAttribute("date", simpleDateFormat.format(date));
         myResource.write(simpleDateFormat.format(date));
-        req.getRequestDispatcher("/webapp/WEB-INF/views/index.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 
     @Override
