@@ -13,14 +13,6 @@ import mate.dao.MyCoolResource;
 public class IndexController extends HttpServlet {
     private MyCoolResource myCoolResource;
 
-    static {
-        System.out.println("Servlet loaded");
-    }
-
-    public IndexController() {
-        System.out.println("Servlet was called");
-    }
-
     @Override
     public void init() throws ServletException {
         myCoolResource = MyCoolResource.openResource();
