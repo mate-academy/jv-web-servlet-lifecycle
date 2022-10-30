@@ -5,7 +5,5 @@
 </head>
 <body>
 <h1>Information written to our resource </h1>
-<h1>${data}</h1>
-
 </body>
 </html>

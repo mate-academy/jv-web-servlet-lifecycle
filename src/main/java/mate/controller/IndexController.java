@@ -13,8 +13,7 @@ public class IndexController extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        MyCoolResource.openResource();
-        super.init();
+        myResource = MyCoolResource.openResource();
     }
 
     @Override
@@ -25,14 +24,10 @@ public class IndexController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        myResource = MyCoolResource.openResource();
         LocalDate localDate = LocalDate.now();
         String timeNow = String.valueOf(localDate);
-        req.getRequestDispatcher("/WEB-INF/views/jspIndex.jsp").include(req,
+        myResource.write(timeNow);
+        req.getRequestDispatcher("/WEB-INF/views/jspIndex.jsp").forward(req,
                 resp);
-
-
-        destroy();
-
     }
 }
