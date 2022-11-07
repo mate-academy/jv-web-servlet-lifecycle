@@ -23,4 +23,9 @@ public class IndexController extends HttpServlet {
         myResource.write(LocalDateTime.now().toString());
         req.getRequestDispatcher("/WEB-INF/views/resource-view.jsp");
     }
+
+    @Override
+    public void destroy() {
+        myResource.close();
+    }
 }
