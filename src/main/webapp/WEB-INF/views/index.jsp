@@ -4,8 +4,7 @@
     <head>
         <title>index page</title>
     </head>
-    <%@ page import="mate.dao.MyCoolResource" %>
     <body>
-
+        <h2>Information written to our resource</h2>
     </body>
 </html>
