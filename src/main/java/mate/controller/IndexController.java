@@ -19,4 +19,12 @@ public class IndexController extends HttpServlet {
         myResource.write(LocalTime.now().toString());
         req.getRequestDispatcher("WEB-INF/views/info.jsp").forward(req, resp);
     }
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        myResource = MyCoolResource.openResource();
+    }
+
+
 }
