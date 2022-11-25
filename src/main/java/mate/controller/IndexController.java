@@ -13,6 +13,7 @@ import mate.dao.MyCoolResource;
 
 public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
