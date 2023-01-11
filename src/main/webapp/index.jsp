@@ -5,6 +5,5 @@
 </head>
 <body>
 <h1>Information written to our resource</h1>
-<p>Information written to our resource</p>
 </body>
 </html>

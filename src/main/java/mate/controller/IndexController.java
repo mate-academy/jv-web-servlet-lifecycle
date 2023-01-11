@@ -12,6 +12,7 @@ import mate.dao.MyCoolResource;
 public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
     //TODO: implement
+
     @Override
     public void init(ServletConfig config) throws ServletException {
         myResource = MyCoolResource.openResource();
