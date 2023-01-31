@@ -16,6 +16,7 @@ public class MyCoolResource implements Closeable {
     }
 
     public void write(String string) {
+        System.out.println(string);
         stringList.add(string);
     }
 
