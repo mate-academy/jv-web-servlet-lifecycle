@@ -1,8 +1,8 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +12,8 @@ import mate.dao.MyCoolResource;
 
 @WebServlet(urlPatterns = "/index")
 public class IndexController extends HttpServlet {
-    private static final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+    private static final SimpleDateFormat formatter = 
+            new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
     private MyCoolResource myResource;
 
     @Override
