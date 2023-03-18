@@ -26,6 +26,7 @@ public class IndexController extends HttpServlet {
             throws ServletException, IOException {
         LocalDate localDate = LocalDate.now();
         myResource.write(localDate.toString());
+        req.setAttribute("message", localDate.toString());
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 
