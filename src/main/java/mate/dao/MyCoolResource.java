@@ -3,6 +3,8 @@ package mate.dao;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.List;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 public class MyCoolResource implements Closeable {
     private List<String> stringList;
@@ -11,7 +13,8 @@ public class MyCoolResource implements Closeable {
         this.stringList = stringList;
     }
 
-    public static MyCoolResource openResource() {
+    @Contract(" -> new")
+    public static @NotNull MyCoolResource openResource() {
         return new MyCoolResource(new ArrayList<>());
     }
 
@@ -22,6 +25,5 @@ public class MyCoolResource implements Closeable {
     @Override
     public void close() {
         stringList.forEach(System.out::println);
-        stringList = null;
     }
 }
