@@ -2,12 +2,14 @@ package mate.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.dao.MyCoolResource;
 import mate.service.MyCoolMoment;
 
+@WebServlet
 public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
     private final MyCoolMoment myCoolMoment;
