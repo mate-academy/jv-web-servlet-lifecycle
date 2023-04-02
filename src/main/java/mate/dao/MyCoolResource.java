@@ -27,6 +27,6 @@ public class MyCoolResource implements Closeable {
 
     @Override
     public String toString() {
-        return stringList + "";
+        return " " + stringList;
     }
 }
