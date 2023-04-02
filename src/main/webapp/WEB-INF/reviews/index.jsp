@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Example</title>
+    <title>Title</title>
 </head>
 <body>
-<p>Information written to our resource.</p>
+<h1>Information written to our resource</h1>
+<h2>Local time is: ${time}</h2>
 </body>
 </html>
