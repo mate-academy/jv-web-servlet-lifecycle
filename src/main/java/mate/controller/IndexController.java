@@ -1,9 +1,36 @@
 package mate.controller;
 
-import javax.servlet.http.HttpServlet;
+
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import mate.dao.MyCoolResource;
+
+import java.io.IOException;
+import java.time.LocalDateTime;
 
 public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
-    //TODO: implement
+
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        String date = LocalDateTime.now().toString();
+        myResource.write(date);
+        req.setAttribute("CurrentData", date);
+        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
+    }
+
+    @Override
+    public void destroy() {
+        myResource.close();
+    }
+
+    @Override
+    public void init() throws ServletException {
+        myResource = MyCoolResource.openResource();
+    }
 }
