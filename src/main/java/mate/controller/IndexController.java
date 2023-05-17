@@ -5,10 +5,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDate;
 import mate.dao.MyCoolResource;
 
 public class IndexController extends HttpServlet {
+    private static final String CURRENT_DATE = "WEB-INF/views/index.jsp";
     private MyCoolResource myResource;
 
     @Override
@@ -20,8 +20,8 @@ public class IndexController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        myResource.write(LocalDate.now().toString());
-        req.getRequestDispatcher("WEB-INF/views/index.jsp").forward(req, resp);
+        myResource.write(CURRENT_DATE);
+        req.getRequestDispatcher(CURRENT_DATE).forward(req, resp);
         System.out.println("MyCoolResource was called");
     }
 
