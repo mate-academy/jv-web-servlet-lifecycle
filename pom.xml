@@ -10,7 +10,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <jdk.version>11</jdk.version>
+        <jdk.version>18</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.checkstyle.plugin.version>3.1.1</maven.checkstyle.plugin.version>
@@ -21,9 +21,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -60,6 +60,14 @@
         </plugins>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.2.3</version>
+                    <configuration>
+                        <webXml>src/main/webapp/web.xml</webXml>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
