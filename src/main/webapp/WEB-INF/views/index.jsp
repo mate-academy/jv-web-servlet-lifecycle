@@ -5,6 +5,6 @@
     <title>index page</title>
 </head>
 <body>
-<h1>Today's date: <%= (new Date()).toString()%></h1>
+<h1><%= (new Date()).toString()%></h1>
 </body>
 </html>
