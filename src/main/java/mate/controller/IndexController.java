@@ -5,5 +5,6 @@ import mate.dao.MyCoolResource;
 
 public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
+
     //TODO: implement
 }
