@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Information written to our resource</title>
+    <title>Index. jv-web-servlet-lifecycle</title>
 </head>
 <body>
-    <h1>This is a test message</h1>
+    <h1>Information written to our resource</h1>
 </body>
 </html>
