@@ -11,10 +11,11 @@ import mate.dao.MyCoolResource;
 
 @WebServlet(urlPatterns = "/index")
 public class IndexController extends HttpServlet {
+    private static final String PATH_TO_JSP = "/WEB-INF/views/index.jsp";
     private MyCoolResource myResource;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         myResource = MyCoolResource.openResource();
     }
 
@@ -22,7 +23,7 @@ public class IndexController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         myResource.write(LocalDateTime.now().toString());
-        req.getRequestDispatcher("/WEB-INF/views/index.jsp")
+        req.getRequestDispatcher(PATH_TO_JSP)
                 .forward(req, resp);
     }
 
