@@ -33,6 +33,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version> <!-- Use a compatible version -->
+                <!-- Other configuration options -->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
                 <configuration>
                     <webXml>src/main/webapp/web.xml</webXml>
                 </configuration>
