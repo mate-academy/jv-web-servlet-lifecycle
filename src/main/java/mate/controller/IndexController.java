@@ -1,7 +1,8 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,16 +16,16 @@ public class IndexController extends HttpServlet {
     private MyCoolResource myResource;
 
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        myResource.write(LocalDate.now().toString());
-        req.getRequestDispatcher("src/main/webapp/index.jsp").forward(req, resp);
-    }
-
-    @Override
     public void init(ServletConfig config) throws ServletException {
         myResource = MyCoolResource.openResource();
         super.init(config);
+    }
+
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        myResource.write(LocalDateTime.now().format(DateTimeFormatter.BASIC_ISO_DATE));
+        req.getRequestDispatcher("WEB-INF/views/index.jsp").forward(req, resp);
     }
 
     @Override
