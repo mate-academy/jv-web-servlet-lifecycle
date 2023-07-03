@@ -13,8 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import mate.dao.MyCoolResource;
 
 public class IndexController extends HttpServlet {
+    static {
+        System.out.println("First");
+    }
+
     private MyCoolResource myResource;
     private int count;
+
+    public IndexController() {
+        System.out.println("Second");
+    }
 
     @Override
     public void init(ServletConfig config) throws ServletException {
