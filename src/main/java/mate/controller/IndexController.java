@@ -2,6 +2,7 @@ package mate.controller;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,9 +14,10 @@ public class IndexController extends HttpServlet {
 
     //TODO: implement
 
+
     @Override
-    public void init() throws ServletException {
-        super.init();
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
         myResource = MyCoolResource.openResource();
     }
 
