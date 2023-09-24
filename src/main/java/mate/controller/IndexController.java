@@ -14,7 +14,6 @@ public class IndexController extends HttpServlet {
 
     //TODO: implement
 
-
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
