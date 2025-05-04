@@ -15,6 +15,10 @@ public class MyCoolResource implements Closeable {
         return new MyCoolResource(new ArrayList<>());
     }
 
+    public String getTime() {
+        return stringList.get(0);
+    }
+
     public void write(String string) {
         stringList.add(string);
     }
