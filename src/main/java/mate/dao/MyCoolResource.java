@@ -21,6 +21,7 @@ public class MyCoolResource implements Closeable {
 
     @Override
     public void close() {
+        System.out.println("Method doGet was called " + stringList.size() + " times at:");
         stringList.forEach(System.out::println);
         stringList = null;
     }
