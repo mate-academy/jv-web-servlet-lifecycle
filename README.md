@@ -1,4 +1,4 @@
-# Servlet lifecycle practice
+ # Servlet lifecycle practice
 
 - Create a JSP page that will display "Information written to our resource" when we write to the resource
 - Initialize `MyCoolResource` trough `init()` method
