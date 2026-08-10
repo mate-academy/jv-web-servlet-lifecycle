@@ -1,8 +1,8 @@
 package core.basesyntax;
 
-/**
- * Feel free to remove this class and create your own.
- */
+import org.junit.Assert;
+import org.junit.Test;
+
 public class HelloWorldTest {
 
 }
