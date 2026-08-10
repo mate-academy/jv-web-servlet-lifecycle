@@ -24,4 +24,9 @@ public class MyCoolResource implements Closeable {
         stringList.forEach(System.out::println);
         stringList = null;
     }
+
+    @Override
+    public String toString() {
+        return "MyCoolResource [stringList=" + stringList + "]";
+    }
 }
