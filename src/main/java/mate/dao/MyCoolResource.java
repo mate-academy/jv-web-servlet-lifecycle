@@ -7,7 +7,7 @@ import java.util.List;
 public class MyCoolResource implements Closeable {
     private List<String> stringList;
 
-    private MyCoolResource(List<String> stringList) {
+    public MyCoolResource(List<String> stringList) {
         this.stringList = stringList;
     }
 
@@ -17,6 +17,10 @@ public class MyCoolResource implements Closeable {
 
     public void write(String string) {
         stringList.add(string);
+    }
+
+    public List<String> getStringList() {
+        return stringList;
     }
 
     @Override
