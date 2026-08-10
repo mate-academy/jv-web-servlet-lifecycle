@@ -36,6 +36,7 @@
                 <configuration>
                     <webXml>src/main/webapp/web.xml</webXml>
                 </configuration>
+                <version>3.3.2</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
